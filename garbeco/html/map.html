@@ -3,8 +3,7 @@
 {% block title %} Главная {% endblock %}
 
 {% block content %}
-    <div class="row" style="height: 100%;">
-        <div id="map-card" class="card col-sm-3 ">
+        <div id="map-card">
             <div class="card-body" id="map-card-body">
                 <div id="preloaded">
                     {% if request.user.is_authenticated %}
@@ -14,12 +13,23 @@
                     <a href=login class='btn' style="background-color: var(--my-white);"> Войти </a>
                     <a href=register class='btn' style="background-color: var(--my-white);"> Зарегистрироваться </a>
                     {% endif %}
+                    <form onsubmit="filterGarbins(event)" id="filter">
+                        <div class="item">
+                            <span> Выбрать все: </span>
+                            <input onclick="filterChooseAll(false, this)" id="choose-all-filter" class="filter-chkbox" type="checkbox">
+                        </div>
+                        {% for type in garbage_types %}
+                        <div class="item">
+                            <span> {{ type.name }}: </span>
+                            <input onclick="filterChooseAll(true, this)" class="filter-chkbox" type="checkbox" value="{{ type.name }}">
+                        </div>
+                        {% endfor %}
+                        <input type="submit" class="btn bg-secondary btn-sm" id="filter-button" value="Фильтр">
+                    </form>
                 </div>
             </div>
-
         </div>
         <div id="map" class="col"></div>
-    </div>
     <span id="user_id" hidden>{{ request.user.id }}</span>
 {% endblock %}
 
@@ -33,6 +43,6 @@
 <script src="{% static 'garbeco/js/custom_map.js' %}"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPjTZiUcJMu8uJGnR4OerKCpEGDnMLrFM&callback=initMap"
-        async defer></script> 
+        async defer></script>
 {% endif %}
 {% endblock %}

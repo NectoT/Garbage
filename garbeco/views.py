@@ -80,7 +80,9 @@ def main_page(request):
         ps.visits += 1
         ps.save()
 
-    return render(request, 'map.html', context={'name': name, 'curr_page': 'main-page', 'map': map})
+    garbage_types = GarbageType.objects.all()
+
+    return render(request, 'map.html', context={'name': name, 'curr_page': 'main-page', 'map': map, 'garbage_types': garbage_types})
 
 
 def ajax_hub(request):

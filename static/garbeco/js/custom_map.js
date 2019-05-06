@@ -35,6 +35,7 @@ function initMap() {
             getAddress(geocoder, map, latlng)
                 .then(address => loadNewPlaceInfo(address)).catch(error => console.log(error));
         } else {
+            depopulate();
             console.info("User is anonymous");
         }
 
@@ -266,6 +267,7 @@ function addGarbinMarker(data) {
     map: map
     });
     garbin_marker.set('id', data.pk);
+    garbin_marker.set('types', data.type_names);
     garbin_marker.addListener('click', function(event) {
         if (garbin_info_loaded_id != garbin_marker.get('id')) {
             depopulate(); // need to clean up first
@@ -323,6 +325,7 @@ function collapse() {
 }
 
 var likes = {}
+var like_numbers = {}
 function changeLikeState(event) {
     event.preventDefault();
     likes_amount = $('#likes-amount')
@@ -330,10 +333,10 @@ function changeLikeState(event) {
         likes[garbin_info_loaded_id] = !(likes[garbin_info_loaded_id]);
         if (likes[garbin_info_loaded_id]) {
             image_path = '/static/garbeco/images/like_notactive.png'
-            likes_amount.html(parseInt(likes_amount.html()) + 1)
+            likes_amount.html(parseInt(likes_amount.html()) - 1)
         } else {
             image_path = '/static/garbeco/images/like_active.png'
-            likes_amount.html(parseInt(likes_amount.html()) - 1)
+            likes_amount.html(parseInt(likes_amount.html()) + 1)
         }
         console.log($('#like-form #like').attr('src'));
         $('#like-form #like').attr('src', image_path);
@@ -345,13 +348,11 @@ function changeLikeState(event) {
             success: function(data) {
                 likes[garbin_info_loaded_id] = !(data.state);
                 if (likes[garbin_info_loaded_id]) {
-                    image_path = '/static/garbeco/images/gar_glass.png'
+                    image_path = '/static/garbeco/images/like_not_active.png'
+                    likes_amount.html(parseInt(likes_amount.html()) - 1)
+                } else {
                     image_path = '/static/garbeco/images/like_active.png'
                     likes_amount.html(parseInt(likes_amount.html()) + 1)
-                } else {
-                    image_path = '/static/garbeco/images/like_notactive.png'
-                    image_path = '/static/garbeco/images/like_notactive.png'
-                    likes_amount.html(parseInt(likes_amount.html()) - 1)
                 }
                 $('#like-form #like').attr('src', image_path);
             },
@@ -394,4 +395,49 @@ setInterval(function() {
     if (Object.keys(likes).length > 0) {
         sendLike()
     }
-}, 10 * 60 * 1000) // every minute
+}, 1 * 60 * 1000) // every minute
+
+function filterChooseAll(child_checkbox, that) {
+    let btn = that;
+    let chk = document.getElementById('choose-all-filter');
+    if (child_checkbox) { // looks disgusting    
+        if (chk.checked && !(btn.checked)) {
+            let boo = false;
+            chk.checked = boo;
+        }
+    } else {
+        let boo;
+        if (chk.checked) {
+            boo = true;
+        } else {
+            boo = false;
+        }
+        let list_els = document.getElementById("filter").children;
+        for (i = 0; i < list_els.length - 1; i++) {
+            let checkbox = list_els[i].querySelector('input')
+            checkbox.checked = boo;
+        } 
+    }
+}
+
+function filterGarbins(event) {
+    event.preventDefault();
+    let shown_types = []
+    let list_els = document.getElementById("filter").children;
+    for (i = 1; i < list_els.length - 1; i++) {
+        let checkbox = list_els[i].querySelector('input')
+        if (checkbox.checked) {
+            shown_types.push(checkbox.value);
+        }
+    }
+
+    for (i = 0; i < garbins.length; i++) {
+        garbin = garbins[i];    
+        has_type = garbin.get('types').some(type => shown_types.includes(type) );
+        if (has_type && garbin.map == null) {
+            garbin.setMap(map)
+        } else if (!has_type && garbin.map != null) {
+            garbin.setMap(null);
+        }
+    }
+}
