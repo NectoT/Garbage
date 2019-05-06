@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Title {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'garbeco/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'garbeco/css/dummy.css' %}">
+    {% block images %} {% endblock %}
+</head>
+<body id="main" class="" style="width: 100%;">
+    {% get_static_prefix as STATIC_PREFIX %}
+    <span id="static" hidden> {{ STATIC_PREFIX }} </span>
+    <nav id="navbar" class="container.fluid">
+        <div id="nav-links" class="">
+            <div class="left-side-btns">
+                <a href="" id="main-page" class="btn nav-btn" ">Главная</a>
+                <button class="btn nav-btn" id="events">Мероприятия</button>
+            </div>
+            <div class="right-side-btns">
+                {% if request.user.id is None %}
+                <a href="/login" id="sign-in" class="btn nav-btn" style="border-left: 2px solid rgba(0, 0, 0, 0.125);">Войти</a>
+                <a href="/register" id="sign-up" class="btn nav-btn">Зарегестрироваться</a>
+                {% else %}
+                <a href="#" id="profile" class="btn nav-btn" style="border-left: 2px solid rgba(0, 0, 0, 0.125);">Профиль</a>
+                <a href="/exit" id="sign-out" class="btn nav-btn">Выйти</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div id="content" class="container-fluid">
+        {% block content %}
+             Welcome back, {{ name }}
+        {% endblock %}
+    </div>
+    <footer id='footer' class="">
+        <a href="#" id="about-us">О нас</a>
+    </footer>
+
+    <script>
+        var parent = document.querySelector('#nav-links');
+        var buttons = document.querySelectorAll('.nav-btn');
+        for (i = 0; i < buttons.length; i++) {
+            if ('{{ curr_page }}' == buttons[i].id) {
+                var attrs = buttons[i].attributes;
+                var text = buttons[i].innerText;
+
+                var new_button = document.createElement('div');
+                for (j = 0; j < attrs.length; j++) {
+                    new_button.setAttribute(attrs[j].name, attrs[j].value);
+                }
+                new_button.innerText = text;
+                parent.replaceChild(new_button, buttons[i]);
+                break;
+            }
+        }
+    </script>
+    {% block scripts %} {% endblock %}
+</body>
+</html>

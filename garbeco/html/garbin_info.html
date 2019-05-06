@@ -1,0 +1,31 @@
+<div id="garbin-info" class="card bg-light card-body">
+    {% if request.user.id == user_id %}
+        <p> Вы </p>
+    {% else %}
+        <a href="{% url 'profile' id=user_id %}" id="username" style="right: 15px;position: absolute"> {{ username }} </a>
+    {% endif %}
+    <div id="garbin-types">
+        <button class="btn dropdown-toggle" onclick="collapse()" type="button" data-toggle="collapse"
+                data-target="#collapse-target" aria-expanded="false" aria-controls="collapse-target" style="background-color: var(--my-white);">
+        Тип:
+        </button>
+        <div class="collapse" id="collapse-target">
+          <ul class="list-group">
+              {% for type in types %}
+                <li class="list-group-item"> &bull; {{ type }}</li>
+              {% endfor %}
+          </ul>
+        </div>
+    </div>
+    {% if description != "" %}
+        <div id="description" class="alert alert-secondary">{{ description }}</div>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+        <form method="post" id="like-form" onsubmit="return changeLikeState(event)">
+            <input type="image" src="{{image_path}}" id="like" width="32" height="32" class="like">
+            <span id="likes-amount"> {{ likes_amount }} </span>
+            {% csrf_token %}
+        </form>
+        <img src="" onclick="" id="report">
+    {% endif %}
+</div>

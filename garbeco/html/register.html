@@ -1,0 +1,23 @@
+{% extends 'regin_temp.html' %}
+
+{% block title %} Зарегестрироваться {% endblock %}
+
+{% block content %}
+    <div class="container">
+    {% for field in register %}
+        {{ field.label }}:
+        <div class="row">
+            <div class="col">
+                {{ field }}
+            </div>
+            <div class="col-sm-4 text-danger" style="display: flex; align-items: center; font-size: 11pt;">
+                {% for error in field.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <input type="submit" value="Готово" class="regin-button">
+    {% csrf_token %}
+{% endblock %}

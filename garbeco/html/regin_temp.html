@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Oops {% endblock %}</title>
+    {% load static %}
+    <script src="{% static 'garbeco/js/Jquery.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/garbeco/css/dummy.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/garbeco/bootstrap/css/bootstrap.css' %}">
+</head>
+<body id="regin">
+    <div class="vertical-center-rel-to-screen mx-auto container" style="width: 30%; min-width: 300px;;">
+        <div class="row btn-group" role="group" aria-label="regin" style="margin-bottom: -3px;">
+            {% if type == "login" %}
+                <div class="btn border-right border-right-secondary inset" style="background-color: #DED8D8;">Войти</div>
+                <a class="btn border-right border-right-secondary" style="background-color: var(--my-white);" href="/register">Зарегистрироваться</a>
+            {% elif type == "register" %}
+                <a class="btn border-right-secondary" style="background-color: var(--my-white);" href="/login">Войти</a>
+                <div class="btn border-right-secondary inset" style="background-color: #DED8D8;;" >Зарегистрироваться</div>
+            {% else %}
+                <a class="btn border-right-secondary" style="background-color: var(--my-white);" href="/login">Войти</a>
+                <a class="btn border-right-secondary" style="background-color: var(--my-white); " href="/register">Зарегистрироваться</a>
+            {% endif %}
+        </div>
+        <form action="" method="post" class="card row" style="padding: 15px; background-color: var(--my-white);">
+            {% block content %}
+            {% endblock %}
+        </form>
+    </div>
+
+    <!--<button type="button" id="1" onclick="dumb();"> Button </button>-->
+
+    <!--<script type="text/javascript">-->
+        <!--button.addEventListener("click", function(){-->
+            <!--alert("hi");-->
+            <!--$.ajax({-->
+                <!--url: 'http://127.0.0.1:8000/',-->
+                <!--type: 'get',-->
+                <!--success: function(data) {-->
+                    <!--alert(data);-->
+                <!--},-->
+                <!--failure: function(data) {-->
+                    <!--alert('Got an error dude');-->
+                <!--}-->
+            <!--});-->
+        <!--})-->
+    <!--</script>-->
+</body>
+</html>

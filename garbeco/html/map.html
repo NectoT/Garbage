@@ -1,0 +1,38 @@
+{% extends 'main_temp.html' %}
+
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+    <div class="row" style="height: 100%;">
+        <div id="map-card" class="card col-sm-3 ">
+            <div class="card-body" id="map-card-body">
+                <div id="preloaded">
+                    {% if request.user.is_authenticated %}
+                    <a href="#" class="btn" style="background-color: var(--my-white); margin: auto; display: block;"> Создать мероприятие </a>
+                    {% else %}
+                    <p id='map-not-logged-in-text'> Войдите в аккаунт, чтобы отметить метку/ создать мероприятие </p>
+                    <a href=login class='btn' style="background-color: var(--my-white);"> Войти </a>
+                    <a href=register class='btn' style="background-color: var(--my-white);"> Зарегистрироваться </a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        <div id="map" class="col"></div>
+    </div>
+    <span id="user_id" hidden>{{ request.user.id }}</span>
+{% endblock %}
+
+{% block scripts %}
+{% if map %}
+{% load static %}
+<script src="{% static 'garbeco/js/Jquery.js' %}"></script>
+
+<script src="{% static 'garbeco/bootstrap/js/bootstrap.js' %}"></script>
+
+<script src="{% static 'garbeco/js/custom_map.js' %}"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPjTZiUcJMu8uJGnR4OerKCpEGDnMLrFM&callback=initMap"
+        async defer></script> 
+{% endif %}
+{% endblock %}

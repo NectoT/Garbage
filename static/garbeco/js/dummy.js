@@ -1,0 +1,3 @@
+function dumb() {
+    alert("boo!");
+}

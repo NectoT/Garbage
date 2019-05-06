@@ -1,0 +1,17 @@
+<form onsubmit="return sendGarbinSubmission(event)" method="post" class="garbin" id="garbin-form">
+    {% for field in garbin %}
+        {% if field.name == "lat" or field.name == "lng" %}
+            {{ field }}
+        {% elif field.name != "types" %}
+        <div id="text-area-holder">
+            <span id="trim_needed"> {{ field.label }}: </span>
+            {{ field }}
+        </div>
+        {% else %}
+            {{ field }}
+        {% endif %}
+    {% endfor %}
+    {% csrf_token %}
+    <input type="submit" id="garbin-form-submit" class="btn" value="Создать метку" style="background-color: var(--my-white); margin: 10px auto; display: block;">
+</form>
+<h4 style="text-align: center;">Или</h4>
