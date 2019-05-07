@@ -28,6 +28,8 @@ urlpatterns = [
     path('exit/', views.exit),
     path('profile/<int:id>', views.profile, name="profile"),
     path('ajax/', views.ajax_hub),
+    path('ajax/newgarbin/', views.create_garbin),
+    path('passwordsent', views.forgot_password)
 ]
 
 if settings.DEBUG:

@@ -1,13 +1,16 @@
 from django.shortcuts import render, redirect
 from django.core import serializers
 from django.contrib.auth import authenticate, login, logout
-from garbeco.models import LoginForm, RegisterForm, PageStatistics, GarbageForm, GarbageBin, GarbageType, Like
-from django.contrib.auth.models import User
+from garbeco.models import LoginForm, RegisterForm, PageStatistics, GarbageForm, GarbageBin, GarbageType, Like, EmailForm
+from garbeco.models import GarUser as User
 from django.http import HttpResponse, JsonResponse
-from Garbage.settings import STATIC_URL
+from Garbage.settings import STATIC_URL, BASE_DIR
 from django.template.response import TemplateResponse
 from django import forms
 import json
+import random
+import bs4
+import subprocess
 
 
 def login_required(function):  # don't really need this, could use django decorators but meh
@@ -61,6 +64,32 @@ def register_page(request):
         return render(request, 'register.html', context={'register': RegForm, 'type': 'register'})
 
 
+def forgot_password(request):
+    if request.method == "POST":
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            asciis = [[65, 90], [48, 57], [97, 122]]
+            new_password = ''
+            for i in range(8):
+                symbol = chr(random.randint(*random.choice(asciis)))
+                new_password += symbol
+            html_ = render(request, 'email_forgot_password.html', context={'new_password': new_password})
+            soup = bs4.BeautifulSoup(html_.content, 'html.parser')
+            html_string = soup.prettify()
+            # i need to finish this thing later
+            subprocess.run(["py", BASE_DIR + "\\garbeco\\emailpassword.py", str(email), '"' + html_string + '"',
+                                " " + str(new_password)])
+            user = User.objects.get(
+                email=email)
+            user.set_password(new_password)
+            user.save()
+            return redirect('/login')
+    else:
+        form = EmailForm()
+        return render(request, 'forgot_password.html', context={'form': form})
+
+
 def profile(request, id):
     return HttpResponse("Not ready yes")
 
@@ -87,23 +116,10 @@ def main_page(request):
 
 def ajax_hub(request):
     if request.method == "POST":
-        if request.POST['get_id'] == 'send_like':
+        if request.POST['post_id'] == 'send_like':
             return like(request)
-        form = GarbageForm(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data)
-            lng = form.cleaned_data['lng']
-            lat = form.cleaned_data['lat']
-            description = form.cleaned_data['description']
-            types = form.cleaned_data['types']
-            new_bin = GarbageBin(user=request.user, lat=lat, lng=lng, description=description)
-            new_bin.save()
-            new_bin.types.add(*types)
-            return HttpResponse("We got it boys!")
-        else:
-            response = JsonResponse({'error_message': 'invalid_form'})
-            response.status_code = 406
-            return response
+        elif request.POST['post_id'] == "delete_garbin":
+            return delete_garbin(request)
     else:
         print(request.GET['get_id'])
         if request.GET['get_id'] == 'get_garbins':
@@ -116,8 +132,28 @@ def ajax_hub(request):
             return send_garbin_info(request)
         elif request.GET['get_id'] == 'getlikestate':
             return send_like_state(request)
+        elif request.GET['get_id'] == 'get_forgot_password_form':
+            return forgot_password(request)
         else:
             return HttpResponse("Invalid request id")
+
+
+def create_garbin(request):
+    form = GarbageForm(request.POST)
+    if form.is_valid():
+        print(form.cleaned_data)
+        lng = form.cleaned_data['lng']
+        lat = form.cleaned_data['lat']
+        description = form.cleaned_data['description']
+        types = form.cleaned_data['types']
+        new_bin = GarbageBin(user=request.user, lat=lat, lng=lng, description=description)
+        new_bin.save()
+        new_bin.types.add(*types)
+        return HttpResponse("We got it boys!")
+    else:
+        response = JsonResponse({'error_message': 'invalid_form'})
+        response.status_code = 406
+        return response
 
 
 def send_like_state(request):
@@ -181,21 +217,29 @@ def send_garbins(request, filter=None):
 
 
 def like(request):
-    likes = json.loads(request.POST['likes'])
-    for submission_id in likes:
-        belongs_to_type = request.POST['like_type']
-        the_like = Like.objects.filter(user=request.user, belongs_to_type=belongs_to_type, belongs_to_id=submission_id)
-        if len(the_like) == 0:  # create new like
-            like = Like(user=request.user, belongs_to_type=belongs_to_type, belongs_to_id=submission_id)
-            like.save()
-            response = JsonResponse({'active': True, 'image_path': STATIC_URL + "garbeco/images/like_active.png"})
-            return response
-        elif len(the_like) > 1:
-            response = JsonResponse({'error_message': "there are more than one like on the same submission from the same user"})
-            response.status_code = 500
-            return response
-        else:  # delete like
-            the_like[0].delete()
-            return JsonResponse({'active': False, 'image_path': STATIC_URL + "garbeco/images/like_notactive.png"})
+    belongs_to_type = request.POST['like_type']
+    submission_id = request.POST['submission_id']
+    the_like = Like.objects.filter(user=request.user, belongs_to_type=belongs_to_type, belongs_to_id=submission_id)
+    likes_amount = len(Like.objects.filter(belongs_to_type=belongs_to_type, belongs_to_id=submission_id))
+    if len(the_like) == 0:  # create new like
+        like = Like(user=request.user, belongs_to_type=belongs_to_type, belongs_to_id=submission_id)
+        like.save()
+        likes_amount += 1
+        response = JsonResponse({'active': True, 'image_path': STATIC_URL + "garbeco/images/like_active.png", 'likes_amount': likes_amount})
+        return response
+    elif len(the_like) > 1:
+        response = JsonResponse({'error_message': "there are more than one like on the same submission from the same user"})
+        response.status_code = 500
+        return response
+    else:  # delete like
+        the_like[0].delete()
+        likes_amount -= 1
+        return JsonResponse({'active': False, 'image_path': STATIC_URL + "garbeco/images/like_notactive.png", 'likes_amount': likes_amount})
+
+
+def delete_garbin(request):
+    garbin = GarbageBin.objects.get(pk=request.POST['garbin_id'])
+    garbin.delete()
+    return HttpResponse("Done deleting")
 
 

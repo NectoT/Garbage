@@ -178,8 +178,19 @@ body {
 	margin-bottom: 50px;
 }
 
-#garbin-info . {
-
+#garbin-info #you {
+	position: absolute;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: auto auto;
+	right: 10%;
+}
+#garbin-info p {
+	grid-column: 1 / 1;
+	margin-right: 20px;
+}
+#garbin-info input {
+	grid-column: 2 / 2;
 }
 
 

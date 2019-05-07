@@ -22,12 +22,13 @@
                 <a class="btn border-right-secondary" style="background-color: var(--my-white); " href="/register">Зарегистрироваться</a>
             {% endif %}
         </div>
-        <form action="" method="post" class="card row" style="padding: 15px; background-color: var(--my-white);">
+        <div id="content" class="card row" style="padding: 15px; background-color: var(--my-white);">
             {% block content %}
             {% endblock %}
-        </form>
+        </div>
     </div>
 
+    {% block scripts %} {% endblock %}
     <!--<button type="button" id="1" onclick="dumb();"> Button </button>-->
 
     <!--<script type="text/javascript">-->

@@ -1,6 +1,13 @@
 <div id="garbin-info" class="card bg-light card-body">
     {% if request.user.id == user_id %}
-        <p> Вы </p>
+        <div id="you">
+            <p> Вы </p>
+            <form id='delete-form' onsubmit="return deleteGarbin(event)">
+                {% load static %}
+                <input src="{% static 'garbeco/images/delete_icon.png' %}" width="16" height="16" type="image" title="Удалить метку">
+                {% csrf_token %}
+            </form>
+        </div>
     {% else %}
         <a href="{% url 'profile' id=user_id %}" id="username" style="right: 15px;position: absolute"> {{ username }} </a>
     {% endif %}
@@ -21,11 +28,10 @@
         <div id="description" class="alert alert-secondary">{{ description }}</div>
     {% endif %}
     {% if request.user.is_authenticated %}
-        <form method="post" id="like-form" onsubmit="return changeLikeState(event)">
+        <form method="post" id="like-form" onsubmit="return sendLike(event)">
             <input type="image" src="{{image_path}}" id="like" width="32" height="32" class="like">
             <span id="likes-amount"> {{ likes_amount }} </span>
             {% csrf_token %}
         </form>
-        <img src="" onclick="" id="report">
     {% endif %}
 </div>

@@ -1,26 +1,29 @@
 from django.db import models
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from Garbage.settings import BASE_DIR, STATIC_URL
 import os
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+
+
+@receiver(pre_delete)  # delete all likes lined to garbage bin that is going to be deleted
+def delete_repo(sender, instance, **kwargs):
+    if sender == GarbageBin:
+        likes = Like.objects.filter(belongs_to_type='garbin', belongs_to_id=instance.pk)
+        for like in likes:
+            like.delete()
+
+
+class GarUser(AbstractUser):
+    email = models.EmailField(unique=True)
 
 
 class PageStatistics(models.Model):
     page_url = models.CharField(max_length=50)
     visits = models.IntegerField(default=0)
-
-#
-# NORMAL = "normal"
-# PAPER = "paper"
-# GLASS = "glass"
-# PLASTIC = "plastic"
-# type_choices = ((NORMAL, 'normal'),
-#                 (PAPER, 'paper'),
-#                 (GLASS, 'glass'),
-#                 (PLASTIC, 'plastic'),
-#                 )
 
 
 class GarbageType(models.Model):
@@ -32,13 +35,12 @@ class GarbageType(models.Model):
 
 
 class GarbageBin(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET("deleted"))  # not sure about delete part
+    user = models.ForeignKey(GarUser, on_delete=models.SET("deleted"))  # not sure about delete part
     lat = models.FloatField()
     lng = models.FloatField()
     added = models.DateTimeField(auto_now_add=True)
     types = models.ManyToManyField(GarbageType)
     description = models.TextField(max_length=30, default="")
-
 
 
 class GarbageForm(forms.Form):
@@ -82,13 +84,17 @@ class RegisterForm(forms.Form):
             self.add_error('password', error)
 
         username = cleaned_data.get('username')
-        if len(User.objects.filter(username=username)) != 0 or username == "AnonymousUser":
+        if len(GarUser.objects.filter(username=username)) != 0 or username == "AnonymousUser":
             error = forms.ValidationError("Имя уже существует", code="invalid")
             self.add_error('username', error)
 
 
+class EmailForm(forms.Form):
+    email = forms.EmailField()
+
+
 class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(GarUser, on_delete=models.CASCADE, null=True)
     added = models.DateTimeField(auto_now_add=True)
     belongs_to_id = models.PositiveIntegerField()
     belongs_to_type = models.CharField(max_length=20, choices=(

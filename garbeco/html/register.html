@@ -3,7 +3,7 @@
 {% block title %} Зарегестрироваться {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <form method="post" action="" class="container">
     {% for field in register %}
         {{ field.label }}:
         <div class="row">
@@ -17,7 +17,7 @@
             </div>
         </div>
     {% endfor %}
-    </div>
-    <input type="submit" value="Готово" class="regin-button">
-    {% csrf_token %}
+        <input type="submit" value="Готово" class="regin-button">
+        {% csrf_token %}
+    </form>
 {% endblock %}

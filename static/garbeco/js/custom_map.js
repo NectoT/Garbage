@@ -56,6 +56,7 @@ function getAddress(geocoder, map, latlng) {
             function(results, state) {
                 if (state == "OK") {
                     // sorting address is done horribly, i'm sorry.
+                    console.log(results)
                     let unsorted_address = results[0].address_components
                     let route_found = false;
                     let localty_found = false;
@@ -95,6 +96,7 @@ function getAddress(geocoder, map, latlng) {
                 } else {
                     alert("Geocoding went wrong");
                     reject("Oh no!");
+                    removeMarker();
                 }
             }
         );
@@ -220,13 +222,38 @@ function populateMapWithGarbins() {
     })
 }
 
+function deleteGarbin(event) {
+    event.preventDefault();
+    let csrfmiddlewaretoken = $('#delete-form').serializeArray()[0]['value'];
+    $.ajax({
+        type: 'post',
+        url: '/ajax/',
+        data: {'post_id': 'delete_garbin', 'garbin_id': garbin_info_loaded_id, 'csrfmiddlewaretoken': csrfmiddlewaretoken},
+        success: function(data) {
+            depopulate();
+            for (i = 0; i < garbins.length; i++) {
+                if (garbins[i].get('id') == garbin_info_loaded_id) {
+                    garbins[i].setMap(null);
+                    garbin_info_loaded_id = null;
+                    index = i;
+                    garbins.splice(index, 1);
+                    break;
+                }
+            }
+        },
+        error: function(data) {
+            console.error("Could not delete garbin");
+        }
+    })
+}
+
 
 function sendGarbinSubmission(event) {
     event.preventDefault();
     let data = $('#garbin-form').serializeArray();
     $.ajax({
         type: 'post',
-        url: '/ajax/',
+        url: '/ajax/newgarbin/',
         data: data,
         success: function() {
             depopulate();
@@ -324,78 +351,26 @@ function collapse() {
     $('.collapse').collapse();
 }
 
-var likes = {}
-var like_numbers = {}
-function changeLikeState(event) {
-    event.preventDefault();
-    likes_amount = $('#likes-amount')
-    if (garbin_info_loaded_id in likes) {
-        likes[garbin_info_loaded_id] = !(likes[garbin_info_loaded_id]);
-        if (likes[garbin_info_loaded_id]) {
-            image_path = '/static/garbeco/images/like_notactive.png'
-            likes_amount.html(parseInt(likes_amount.html()) - 1)
-        } else {
-            image_path = '/static/garbeco/images/like_active.png'
-            likes_amount.html(parseInt(likes_amount.html()) + 1)
-        }
-        console.log($('#like-form #like').attr('src'));
-        $('#like-form #like').attr('src', image_path);
-    } else {
-        $.ajax({
-            type: 'get',
-            url: 'ajax',
-            data: {get_id: 'getlikestate', like_type: 'garbin', submission_id: garbin_info_loaded_id},
-            success: function(data) {
-                likes[garbin_info_loaded_id] = !(data.state);
-                if (likes[garbin_info_loaded_id]) {
-                    image_path = '/static/garbeco/images/like_not_active.png'
-                    likes_amount.html(parseInt(likes_amount.html()) - 1)
-                } else {
-                    image_path = '/static/garbeco/images/like_active.png'
-                    likes_amount.html(parseInt(likes_amount.html()) + 1)
-                }
-                $('#like-form #like').attr('src', image_path);
-            },
-            error: function(data) {
-                console.error("could not get like state");
-                return false;
-            }
-        })
-    }
-    return false;
-}
-
-
 function sendLike() {
+    event.preventDefault();
+
     let csrfmiddlewaretoken = $('#like-form').serializeArray()[0]['value'];
     $.ajax({
         type: 'post',
         url: '/ajax/',
-        data: {get_id: 'send_like', like_type: 'garbin', 'likes': JSON.stringify(likes), csrfmiddlewaretoken: csrfmiddlewaretoken},
-        async: false,
+        data: {post_id: 'send_like', like_type: 'garbin', submission_id: garbin_info_loaded_id, csrfmiddlewaretoken: csrfmiddlewaretoken},   
         success: function(data) {
-            console.info("likes sent")
+            console.info("likes sent", $('#like'));
+            $('#like').attr('src', data.image_path);
+            $('#likes-amount').html(data.likes_amount);
+            console.info("likes sent", $('#like').attr('src'));
         },
         error: function(data) {
             console.error("Liking went wrong")
         }
     })
-    console.log("Wheeeeeeeeeeeeeeeeeee")
     return true;
 }
-
-$(window).on('beforeunload', function(event) {
-    console.log("test")
-    if (Object.keys(likes).length > 0) {
-        sendLike();
-    }
-}) 
-
-setInterval(function() {
-    if (Object.keys(likes).length > 0) {
-        sendLike()
-    }
-}, 1 * 60 * 1000) // every minute
 
 function filterChooseAll(child_checkbox, that) {
     let btn = that;

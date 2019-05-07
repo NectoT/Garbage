@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddab4568-ec82-4408-bd2d-9529218b9db0" name="Default Changelist" comment="" />
+    <list default="true" id="ddab4568-ec82-4408-bd2d-9529218b9db0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/garbeco/emailpassword.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garbeco/html/email_forgot_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garbeco/html/forgot_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/garbeco/images/delete_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Garbage/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Garbage/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Garbage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Garbage/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/html/garbin_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/html/garbin_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/html/main_temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/html/main_temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/html/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/html/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/html/regin_temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/html/regin_temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0002_auto_20190504_1546.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/migrations/0002_auto_20190508_0050.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0003_auto_20190504_1548.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0004_auto_20190504_1552.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0005_garbagebin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0006_auto_20190504_2123.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0007_garbagebin_added.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0008_auto_20190505_1152.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0009_auto_20190505_1153.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0010_auto_20190505_1158.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0011_auto_20190505_1214.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0012_auto_20190505_1223.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0013_auto_20190505_1230.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0014_auto_20190505_1235.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0015_auto_20190505_2021.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0016_like.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0017_auto_20190506_1436.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0018_auto_20190506_1504.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/migrations/0019_auto_20190506_1505.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbeco/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbeco/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/garbeco/css/dummy.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/garbeco/css/dummy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/garbeco/js/custom_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/garbeco/js/custom_map.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/garbeco/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+            <state relative-caret-position="238">
+              <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -25,17 +63,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Garbage/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="121" column="14" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/garbeco/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+            <state relative-caret-position="442">
+              <caret line="89" column="78" lean-forward="true" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -44,52 +82,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/garbeco/js/custom_map.js">
+        <entry file="file://$PROJECT_DIR$/garbeco/html/forgot_password.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="330" column="37" selection-start-line="330" selection-start-column="37" selection-end-line="330" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/garbeco/html/main_temp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="44" />
+            <state relative-caret-position="17">
+              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
               <folding>
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/garbeco/html/map.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Garbage/urls.py">
+        <entry file="file://$PROJECT_DIR$/garbeco/html/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+            <state relative-caret-position="408">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding>
-                <element signature="e#631#663#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/garbeco/html/regin_temp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/garbeco/html/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/garbeco/emailpassword.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/garbeco/html/email_forgot_password.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="120" selection-start-line="9" selection-start-column="120" selection-end-line="9" selection-end-column="120" />
             </state>
           </provider>
         </entry>
@@ -112,6 +174,9 @@
       <find>btn</find>
       <find>.</find>
       <find>создать мероприятие</find>
+      <find>AUTH_USER_MODEL</find>
+      <find>User</find>
+      <find>user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,22 +191,27 @@
         <option value="$PROJECT_DIR$/garbeco/html/dummy1.css" />
         <option value="$PROJECT_DIR$/garbeco/static/garbeco/css/dummy.css" />
         <option value="$PROJECT_DIR$/garbeco/static/garbeco/js/dummy.js" />
-        <option value="$PROJECT_DIR$/Garbage/settings.py" />
-        <option value="$PROJECT_DIR$/garbeco/html/register.html" />
         <option value="$PROJECT_DIR$/static/garbeco/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/garbeco/html/login.html" />
-        <option value="$PROJECT_DIR$/garbeco/html/regin_temp.html" />
         <option value="$PROJECT_DIR$/garbeco/delete.py" />
         <option value="$PROJECT_DIR$/garbeco/map_get_form.html" />
         <option value="$PROJECT_DIR$/static/garbeco/css/dummy.css" />
         <option value="$PROJECT_DIR$/garbeco/html/garbin_form.html" />
-        <option value="$PROJECT_DIR$/Garbage/urls.py" />
-        <option value="$PROJECT_DIR$/garbeco/models.py" />
         <option value="$PROJECT_DIR$/static/garbeco/js/custom_map.js" />
-        <option value="$PROJECT_DIR$/garbeco/views.py" />
         <option value="$PROJECT_DIR$/garbeco/html/garbin_info.html" />
-        <option value="$PROJECT_DIR$/garbeco/html/map.html" />
         <option value="$PROJECT_DIR$/garbeco/html/main_temp.html" />
+        <option value="$PROJECT_DIR$/garbeco/html/map.html" />
+        <option value="$PROJECT_DIR$/garbeco/html/emal_forgot_password.html" />
+        <option value="$PROJECT_DIR$/garbeco/html/regin_temp.html" />
+        <option value="$PROJECT_DIR$/Garbage/urls.py" />
+        <option value="$PROJECT_DIR$/garbeco/html/login.html" />
+        <option value="$PROJECT_DIR$/Garbage/settings.py" />
+        <option value="$PROJECT_DIR$/garbeco/html/register.html" />
+        <option value="$PROJECT_DIR$/garbeco/models.py" />
+        <option value="$PROJECT_DIR$/garbeco/test.py" />
+        <option value="$PROJECT_DIR$/garbeco/html/forgot_password.html" />
+        <option value="$PROJECT_DIR$/garbeco/html/email_forgot_password.html" />
+        <option value="$PROJECT_DIR$/garbeco/emailpassword.py" />
+        <option value="$PROJECT_DIR$/garbeco/views.py" />
       </list>
     </option>
   </component>
@@ -157,6 +227,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,6 +259,12 @@
             <path>
               <item name="Garbage" type="b2602c69:ProjectViewProjectNode" />
               <item name="Garbage" type="462c0819:PsiDirectoryNode" />
+              <item name="garbeco" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Garbage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Garbage" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -207,7 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,9 +360,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Garbage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/garbeco" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\necto\PycharmProjects\Garbage\garbeco\emailpassword.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.manage" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.delete" />
       </list>
     </recent_temporary>
@@ -302,6 +400,14 @@
       <option name="presentableId" value="Default" />
       <updated>1556731823390</updated>
     </task>
+    <task id="LOCAL-00001" summary="added filter">
+      <created>1557172362071</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557172362071</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -358,6 +464,11 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added filter" />
+    <MESSAGE value="made very raw 'forgot password' fucnctionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="made very raw 'forgot password' fucnctionality" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/bin/django-admin.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -409,20 +520,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/delete.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/html/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/delete.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/core/management/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
@@ -461,24 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/html/regin_temp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="46" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/forms/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -500,16 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/html/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/garbeco/images/gar_paper.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -520,37 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Garbage/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/html/garbin_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -566,64 +605,158 @@
     <entry file="file://$PROJECT_DIR$/static/garbeco/images/like_notactive.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/garbin_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/garbeco/js/custom_map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="330" column="37" selection-start-line="330" selection-start-column="37" selection-end-line="330" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Garbage/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="121" column="14" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/html/garbin_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#530#536#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/garbeco/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="203">
+          <caret line="354" selection-start-line="354" selection-end-line="354" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/garbeco/html/main_temp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="44" />
+        <state relative-caret-position="289">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/garbeco/html/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/garbin_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="6" column="131" selection-start-line="6" selection-start-column="131" selection-end-line="6" selection-end-column="131" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Garbage/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/email_forgot_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="120" selection-start-line="9" selection-start-column="120" selection-end-line="9" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/forgot_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/regin_temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/html/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/emailpassword.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Garbage/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garbeco/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="89" column="78" lean-forward="true" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

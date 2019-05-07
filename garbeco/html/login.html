@@ -22,23 +22,44 @@
         </div>
     {% endfor %}
     <input type="submit" value="Log In" class="regin-button">
+    <a href="#" onclick="return forgotPassword(event)">Забыли пароль?</a>
     {% csrf_token %}
-
-    <script>
-        function show_hide_password(){
-            var Image = document.getElementById("show");
-            var Input = document.getElementById("pass");
-
-            var temp_arr = Image.src.split("/");
-            var curr_image = temp_arr[temp_arr.length - 1];
-            if (curr_image == "show_password.png"){
-                Image.src = "{% static 'garbeco/images/hide_password.png' %}";
-                Input.type = "text";
-            } else {
-                Image.src = "{% static 'garbeco/images/show_password.png' %}";
-                Input.type = "password";
-            }
-        }
-    </script>
 </form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function show_hide_password(){
+        var Image = document.getElementById("show");
+        var Input = document.getElementById("pass");
+
+        var temp_arr = Image.src.split("/");
+        var curr_image = temp_arr[temp_arr.length - 1];
+        if (curr_image == "show_password.png"){
+            Image.src = "{% static 'garbeco/images/hide_password.png' %}";
+            Input.type = "text";
+        } else {
+            Image.src = "{% static 'garbeco/images/show_password.png' %}";
+            Input.type = "password";
+        }
+    }
+</script>
+<script>
+    function forgotPassword(event) {
+        event.preventDefault();
+        console.log("hi")
+        $.ajax({
+            type: 'get',
+            url: '/ajax',
+            data: {'get_id': 'get_forgot_password_form'},
+            success: function(data) {
+                console.log($('#content'));
+                $('#content').html(data);
+            },
+            error: function (data) {
+                console.error("could not load 'forgot password' form");
+            }
+        })
+    }
+</script>
 {% endblock %}
